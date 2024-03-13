@@ -19,12 +19,33 @@ import java.util.Arrays;
  */
 public class q283_moveZeroes {
 
+    public void moveZeroes2(int[] nums) {
+        int left = 0;
+        int right = 0;
+        // [1]时超出时间限制，这样会要求必须有值为0
+        //  发现left后一个永远会是0，存在的话
+        //  在发现if和elseif重合了
+        // 考虑[1,2,3,0]的情况，left一直不变
+        while (right < nums.length) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                //无论如何下一个都会是0
+                left++;
+            } else {
+                right++;
+            }
+        }
+        System.out.println(Arrays.toString(nums));
+
+    }
+
     public void moveZeroes(int[] nums) {
 
         // 思路:
         // 滑动指针，第一个指针指向第一个0；第二个指针指向第一个非0，然后做交换
-        int n = nums.length, left = 0, right = 1;
+        int n = nums.length, left = 0, right = 0;
         while (right < n) {
+            // 只要右侧的数字不为0则交换
             if (nums[right] != 0) {
                 swap(nums, left, right);
                 left++;
@@ -34,6 +55,7 @@ public class q283_moveZeroes {
         System.out.println(Arrays.toString(nums));
 
     }
+
     public void swap(int[] nums, int left, int right) {
         int temp = nums[left];
         nums[left] = nums[right];
@@ -44,13 +66,8 @@ public class q283_moveZeroes {
     @Test
     public void test() {
         // input
-        int[] input = {0, 1, 0, 3, 12};
-
-        moveZeroes(input);
-
-        // excepted out put
-        //int output = 3;
-        //System.out.println(moveZeroes(input));
+        int[] input = {1, 2, 3};
+        moveZeroes2(input);
 
     }
 }
