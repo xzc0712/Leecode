@@ -32,8 +32,7 @@ public class q53_maxSubArray {
                 continue;
             }
             if (nums[i]<0 && nums[i+1]<0){
-                
-            }
+                            }
         }
         return res;
     }
