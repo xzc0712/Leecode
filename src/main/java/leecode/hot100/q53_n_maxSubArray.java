@@ -12,7 +12,7 @@ package leecode.hot100;
  * 输出：6
  * 解释：连续子数组 [4,-1,2,1] 的和最大为 6 。
  */
-public class q53_maxSubArray {
+public class q53_n_maxSubArray {
     // 暴力
     // 子数组的第一个数字一定是正数
     // 如果全为负数则是最大的负数

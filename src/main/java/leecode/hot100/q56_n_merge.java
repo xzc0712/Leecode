@@ -1,8 +1,6 @@
 package leecode.hot100;
 
-import java.util.Arrays;
-
-public class q56_merge {
+public class q56_n_merge {
     public int[][] merge(int[][] intervals) {
 //        Arrays.sort(intervals,(v1, v2) -> v1[0] - v2[0]);
 //
